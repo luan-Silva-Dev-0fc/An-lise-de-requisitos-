@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documento de Análise de Requisitos – Museu de Arte e Cultura</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #374151;
+      --border: #d1d5db;
+      --title: #1f2933;
+    }* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 40px 32px;
+}
+
+.document {
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: var(--title);
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 48px;
+  margin-bottom: 12px;
+  page-break-before: always;
+  color: var(--title);
+}
+
+h2:first-of-type { page-break-before: auto; }
+
+p {
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  vertical-align: top;
+}
+
+th {
+  background: #f3f4f6;
+  text-align: left;
+}
+
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+  </style>
+</head>
+<body>
+  <main class="document">
+    <h1>Documento de Análise de Requisitos<br>Sistema de Registro de Visitantes do Museu de Arte e Cultura</h1><h2>1. Descrição Detalhada do Problema</h2>
+<p>
+  O Museu de Arte e Cultura realiza atualmente o registro de seus visitantes por meio de um livro físico, onde cada pessoa preenche manualmente seus dados pessoais. Esse processo envolve informações sensíveis, como CPF, além de dados demográficos utilizados para fins estatísticos.
+</p>
+<p>
+  A utilização de registros manuais dificulta a organização das informações, gera riscos de perda ou extravio dos dados, aumenta a possibilidade de erros humanos e torna extremamente demorado o processo de consolidação das informações solicitadas pela Secretaria de Cultura. Essa situação compromete a confiabilidade dos dados enviados e pode impactar negativamente o repasse de recursos públicos.
+</p>
+
+<h2>2. Objetivo da Solução Proposta</h2>
+<p>
+  O objetivo deste projeto é desenvolver um sistema informatizado que permita o registro digital de visitantes, assegurando a integridade, segurança e confiabilidade das informações coletadas. O sistema deverá automatizar a geração de relatórios exigidos pela Secretaria de Cultura e incorporar tecnologia de reconhecimento facial como mecanismo adicional de segurança e identificação de visitantes únicos.
+</p>
+
+<h2>3. Descrição da Solução</h2>
+<p>
+  A solução proposta consiste em um Sistema Web de Gestão de Visitantes, acessível por navegadores modernos em computadores, tablets ou totens instalados no museu. O sistema contará com banco de dados centralizado e mecanismos de validação de dados, incluindo reconhecimento facial, garantindo maior precisão no controle de visitas.
+</p>
+
+<table>
+  <tr><th>Aspecto</th><th>Descrição</th></tr>
+  <tr><td>Tipo de Sistema</td><td>Sistema Web</td></tr>
+  <tr><td>Plataforma</td><td>Navegadores modernos</td></tr>
+  <tr><td>Segurança</td><td>Criptografia de dados e reconhecimento facial</td></tr>
+  <tr><td>Acesso</td><td>Usuários autenticados</td></tr>
+</table>
+
+<h2>4. Requisitos Funcionais</h2>
+<table>
+  <tr><th>Código</th><th>Descrição</th></tr>
+  <tr><td>RF01</td><td>Permitir o cadastro de visitantes com nome, gênero, idade, profissão, cidade, estado e CPF.</td></tr>
+  <tr><td>RF02</td><td>Validar o CPF informado no momento do cadastro.</td></tr>
+  <tr><td>RF03</td><td>Capturar e armazenar imagem facial do visitante mediante consentimento.</td></tr>
+  <tr><td>RF04</td><td>Identificar automaticamente visitantes únicos por meio do CPF e reconhecimento facial.</td></tr>
+  <tr><td>RF05</td><td>Gerar relatórios de total de visitas e visitantes únicos.</td></tr>
+  <tr><td>RF06</td><td>Gerar relatórios de visitantes por cidade.</td></tr>
+  <tr><td>RF07</td><td>Identificar o estado com maior número de visitantes.</td></tr>
+  <tr><td>RF08</td><td>Gerar relatórios de visitantes por gênero.</td></tr>
+  <tr><td>RF09</td><td>Permitir exportação dos relatórios em formato digital.</td></tr>
+  <tr><td>RF10</td><td>Controlar o acesso ao sistema por meio de autenticação.</td></tr>
+</table>
+
+<h2>5. Requisitos Não Funcionais</h2>
+<table>
+  <tr><th>Código</th><th>Descrição</th></tr>
+  <tr><td>RNF01</td><td>O sistema deve estar em conformidade com a Lei Geral de Proteção de Dados (LGPD).</td></tr>
+  <tr><td>RNF02</td><td>As imagens faciais devem ser armazenadas de forma criptografada.</td></tr>
+  <tr><td>RNF03</td><td>O sistema deve possuir alta disponibilidade.</td></tr>
+  <tr><td>RNF04</td><td>O sistema deve ter interface simples e intuitiva.</td></tr>
+  <tr><td>RNF05</td><td>Deve ser realizado backup automático dos dados.</td></tr>
+</table>
+
+<h2>6. Escopo do Projeto</h2>
+<p>
+  O escopo deste projeto compreende o desenvolvimento completo de um sistema informatizado para registro, controle e análise de visitantes do Museu de Arte e Cultura. O sistema abrangerá desde a coleta dos dados no momento da visita até a geração de relatórios consolidados exigidos pela Secretaria de Cultura.
+</p>
+<p>
+  Estão incluídos no escopo do projeto:
+</p>
+<p>
+  • Desenvolvimento de um sistema web responsivo, acessível por computadores, tablets e totens instalados no museu;<br>
+  • Implementação de módulo de cadastro de visitantes com validação de dados obrigatórios;<br>
+  • Implementação de tecnologia de reconhecimento facial para identificação de visitantes únicos, mediante consentimento explícito;<br>
+  • Armazenamento seguro de dados pessoais e biométricos, com uso de criptografia;<br>
+  • Mecanismos automáticos de consolidação estatística das informações coletadas;<br>
+  • Geração de relatórios gerenciais e estatísticos conforme exigências da Secretaria de Cultura;<br>
+  • Exportação de relatórios em formatos digitais apropriados para envio oficial;<br>
+  • Implementação de controle de acesso ao sistema por meio de autenticação de usuários;
+  • Realização de testes funcionais e de segurança;
+  • Implantação do sistema em ambiente definido pelo museu;
+  • Treinamento básico dos usuários responsáveis pela operação do sistema.
+</p>
+<p>
+  Não fazem parte do escopo deste projeto o fornecimento de equipamentos físicos (computadores, câmeras ou totens), integração com outros sistemas governamentais externos ou manutenção contínua após o período inicial de suporte.
+</p>
+
+<h2>7. Benefícios da Solução</h2>
+<p>
+  A implantação do sistema proporcionará ao museu maior agilidade, segurança e confiabilidade no controle de visitantes, além de facilitar a prestação de contas junto à Secretaria de Cultura. Para o órgão governamental, a solução garante dados padronizados, precisos e de fácil análise.
+</p>
+
+<h2>8. Prazo Estimado de Desenvolvimento</h2>
+<p>
+  O prazo estimado para desenvolvimento do sistema é de 8 a 10 semanas, contemplando as fases de levantamento de requisitos, desenvolvimento, testes, implantação e treinamento dos usuários.
+</p>
+
+<h2>8. Preço Estimado do Projeto</h2>
+<p>
+  O valor estimado do projeto é de R$ 48.000,00, considerando o desenvolvimento do sistema web, implementação de reconhecimento facial, adequação à LGPD, testes, implantação e suporte inicial.
+</p>
+
+<footer>
+  Documento técnico – Sistema de Registro de Visitantes do Museu de Arte e Cultura
+</footer>
+
+  </main>
+</body>
+</html>
